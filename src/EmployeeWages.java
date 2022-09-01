@@ -1,12 +1,8 @@
 public class EmployeeWages {
-    public static int workingHours = 30;
-    public static int numberOfDays = 20;
-    public static final int fullTimeHour = 8;
-    public static final int partTimeHour = 4;
-    public static int wagePerHour = 15;
+    public static int fullTimeHour = 8;
+    public static int partTimeHour = 4;
 
-
-    public static void calcEmployeeWage() {
+    public static int calcEmployeeWage(String company, int numberOfDays, int wagePerHour, int workingHours) {
         int totalWorkingDays = 0;
         int totalWorkingHours = 0;
         int totalWages = 0;
@@ -32,21 +28,29 @@ public class EmployeeWages {
             }
 
         }
-        System.out.println("Total Working hours of the employee is " + totalWorkingHours);
-
-        System.out.println("Total Working days of the employee is " + totalWorkingDays);
-
-        System.out.println("Total Wages of employee is " + totalWages);
-
+        return totalWages;
 
     }
 
+
     public static void main(String[] args) {
-        calcEmployeeWage();
+        int numberOfDays, wagePerHour, workingHours;
+
+        int totalEmpWage = calcEmployeeWage("Reliance", wagePerHour = 8, numberOfDays = 10, workingHours = 25);
+
+
+        System.out.println("Employee of Reliance Company has wages : " + totalEmpWage);
+        System.out.println();
+        int totalEmpWage1 = calcEmployeeWage("Tata", wagePerHour = 15, numberOfDays = 30, workingHours = 30);
+
+        System.out.println("Employee of tata Company has wages : " + totalEmpWage1);
+        System.out.println();
+        int totalEmpWage2 = calcEmployeeWage("mahindra", wagePerHour = 10, numberOfDays = 20, workingHours = 15);
+
+        System.out.println("Employee of mahindra Company has wages : " + totalEmpWage2);
 
 
     }
 
 }
-
 
